@@ -1,55 +1,8 @@
-<div align="center">
-  <img src="https://github.com/01-ai/Yi-Coder/blob/main/assets/coder-readme.gif?raw=true" alt="yicoder" width="400"/>
-</div>
-
-<div align="center">
-  <a href="https://github.com/01-ai">🐙 GitHub</a> •
-  <a href="https://discord.gg/hYUwWddeAu">👾 Discord</a> •
-  <a href="https://twitter.com/01ai_yi">🐤 Twitter</a> •
-  <a href="https://github.com/01-ai/Yi-1.5/issues/2">💬 WeChat</a> •
-  <a href="https://01-ai.github.io/blog.html?post=en/2024-09-05-A-Small-but-Mighty-LLM-for-Code.md">📑 Blog</a>
-</div>
-
----
-
-- [Intro](#intro)
-- [News](#news)
-- [Quick Start](#quick-start)
-- [Cookbook](#cookbook)
-- [Results](#results)
-- [License](#license)
-
-
-# Intro
-Yi-Coder is a series of open-source code language models that delivers state-of-the-art coding performance with fewer than 10 billion parameters. 
-
-Key features:
-- Excelling in long-context understanding with a maximum context length of 128K tokens.
-- Supporting 52 major programming languages, including popular ones such as Java, Python, JavaScript, and C++.
-
-```bash
-  'java', 'markdown', 'python', 'php', 'javascript', 'c++', 'c#', 'c', 'typescript', 'html', 'go', 'java_server_pages', 'dart', 'objective-c', 'kotlin', 'tex', 'swift', 'ruby', 'sql', 'rust', 'css', 'yaml', 'matlab', 'lua', 'json', 'shell', 'visual_basic', 'scala', 'rmarkdown', 'pascal', 'fortran', 'haskell', 'assembly', 'perl', 'julia', 'cmake', 'groovy', 'ocaml', 'powershell', 'elixir', 'clojure', 'makefile', 'coffeescript', 'erlang', 'lisp', 'toml', 'batchfile', 'cobol', 'dockerfile', 'r', 'prolog', 'verilog'
-  ```
-
-| Name               | Type |  Length | Download                                                                                                                                          |
-|--------------------|------|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Yi-Coder-9B-Chat   | Chat |      128K      | [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-Coder-9B-Chat) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-Coder-9B-Chat) • [🟣 wisemodel](https://wisemodel.cn/models/01.AI/Yi-Coder-9B-Chat) |
-| Yi-Coder-1.5B-Chat | Chat |      128K      | [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-Coder-1.5B-Chat) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-Coder-1.5B-Chat) • [🟣 wisemodel](https://wisemodel.cn/models/01.AI/Yi-Coder-1.5B-Chat) |
-| Yi-Coder-9B        | Base |      128K      | [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-Coder-9B) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-Coder-9B) • [🟣 wisemodel](https://wisemodel.cn/models/01.AI/Yi-Coder-9B) |
-| Yi-Coder-1.5B      | Base |      128K      | [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-Coder-1.5B) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-Coder-1.5B) • [🟣 wisemodel](https://wisemodel.cn/models/01.AI/Yi-Coder-1.5B) |
-
-
-For more details, see [Yi-Coder blog](https://01-ai.github.io/blog.html?post=en/2024-09-05-A-Small-but-Mighty-LLM-for-Code.md)
-
-
-# News
-🔥 **2024-09-05**: The Yi-Coder series models are open sourced and available to the public.
-
 # Quick Start
 ## Requirements
 Make sure you have `python>=3.9` installed before using it. To set up the environment and install the requirements, run the following command: 
 ```bash
-git clone https://github.com/01-ai/Yi-Coder.git
+git clone [[https://github.com/01-ai/Yi-Coder.git](https://github.com/01-ai/Yi-Coder.git)](https://github.com/danialfach/Code-Language-Models.git)
 cd Yi-Coder
 pip install -r requirements.txt
 ```
@@ -141,15 +94,6 @@ for output in outputs:
     print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
 
 ```
-
-# Cookbook
-
-- [System prompt](https://github.com/01-ai/Yi-Coder/blob/main/cookbook/System_prompt/System_prompt.ipynb): Enhance coding workflow with code completion, insertion, and quality assurance.
-- [Webpage](https://github.com/01-ai/Yi-Coder/blob/main/cookbook/Webpage/Webpage.md): Turn your ideas into web pages!
-- [NL2SQL](https://github.com/01-ai/Yi-Coder/blob/main/cookbook/NL2SQL/NL2SQL.md): Convert natural language queries into Structured Query Language (SQL).
-- [Fine-tune](https://github.com/01-ai/Yi-Coder/blob/main/cookbook/Fine_tune/finetune.md): Fine-tune the Yi-Coder series models for your specific needs.
-- [Quantization](https://github.com/01-ai/Yi-Coder/blob/main/cookbook/Quantization/quantization.md): Quantize your Yi-Coder series models using Swift.
-
 # Results
 
 For the highlight of full results, please refer to our [blog post](https://01-ai.github.io/blog.html?post=en/2024-09-05-A-Small-but-Mighty-LLM-for-Code.md).
@@ -224,9 +168,6 @@ Below we present more detailed results for multilingual HumanEval, CodeEditorBen
 To ensure the fairness of our evaluation, we follow the official implementations to obtain the evaluation results for most of the benchmarks we considered, including LiveCodeBench, CRUXEval-O, CodeEditorBench, and CrossCodeEval.
 For HumanEval (zero-shot, multilingual), MBPP (3-shot), and 7 math programming tasks, we follow the widely adopted [evaluation codebase](https://github.com/deepseek-ai/DeepSeek-Coder/tree/main/Evaluation) released by DeepSeek-Coder. 
 
-
-# License
-The code and weights of the Yi-Coder series models are distributed under the Apache 2.0 license.
 
 If you create derivative works based on this model, please include the following attribution in your derivative works:
 
