@@ -2,7 +2,7 @@
 ## Requirements
 Make sure you have `python>=3.9` installed before using it. To set up the environment and install the requirements, run the following command: 
 ```bash
-git clone [[https://github.com/01-ai/Yi-Coder.git](https://github.com/01-ai/Yi-Coder.git)](https://github.com/danialfach/Code-Language-Models.git)
+git clone https://github.com/danialfach/Code-Language-Models.git
 cd Yi-Coder
 pip install -r requirements.txt
 ```
