@@ -1,0 +1,32 @@
+from modelscope import AutoTokenizer, AutoModelForCausalLM
+import torch
+
+device = "cuda" 
+model_path = "01ai/Yi-Coder-9B-Chat"
+
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto",torch_dtype=torch.bfloat16,).eval()
+
+prompt = "Write a quick sort algorithm."
+messages = [
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": prompt}
+]
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+model_inputs = tokenizer([text], return_tensors="pt").to(device)
+
+generated_ids = model.generate(
+    model_inputs.input_ids,
+    max_new_tokens=1024,
+    eos_token_id=tokenizer.eos_token_id  
+)
+generated_ids = [
+    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
+]
+
+response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+print(response)
